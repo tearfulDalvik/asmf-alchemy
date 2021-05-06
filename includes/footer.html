@@ -1,0 +1,65 @@
+<!-- Footer section -->
+{% unless page.permalink == '/' and site.data.curtana.clean_homepage %}
+  <footer class="copyright m-b-sparse">
+    &copy; {{ amsf_site_name }}. All rights reserved.
+  </footer>
+{% endunless %}
+
+<!-- Theme scripts -->
+<script src="{{ '/js/app.js?assets-inline' | prepend: amsf_theme_assets }}"></script>
+
+<!-- User scripts -->
+<script src="{{ '/js/user.js?assets-inline' | prepend: amsf_user_assets }}"></script>
+
+<!-- Twemoji -->
+{% if page.plugin contains 'twemoji' %}
+  <script src="https://cdn.jsdelivr.net/npm/twemoji@13.0.2/dist/twemoji.min.js" type="text/javascript"></script>
+  <script async="" defer="" type="text/javascript">
+      twemoji.parse(document.body, {
+          folder: 'svg',
+          ext: '.svg',
+          attributes: () => {
+            return {
+              "style": `height: 1em; width: 1em; margin: 0 0.05em 0 0.1em; vertical-align: -0.1em;`,
+              "class": "no-lightense"
+            }
+          },
+          base: 'https://cdn.jsdelivr.net/npm/twemoji/2/',
+      });
+  </script>
+{% endif %}
+
+<!-- vanilla-lazyload -->
+{% if page.plugin contains 'lazyload' %}
+  <script async src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
+  <script async defer type="text/javascript">
+    window.lazyLoadOptions = {
+      // Your custom settings go here
+    };
+  </script>
+{% endif %}
+
+
+<!-- Lightense Images -->
+{% if page.plugin contains 'lightense' %}
+  <script src="{{ '/js/lightense.min.js?assets-inline' | prepend: amsf_theme_assets }}"></script>
+  <script>
+    window.addEventListener('load', function () {
+      Lightense('p > img:not(.no-lightense),.lightense');
+    }, false);
+  </script>
+{% endif %}
+
+<!-- Service Worker  -->
+{{ amsf_service_worker }}
+
+<!-- Google Analytics -->
+{{ amsf_google_analytics }}
+
+<!-- Foot hooks -->
+{% if page.foot %}
+  {{ page.foot }}
+{% endif %}
+
+<!-- Finale -->
+</html>
