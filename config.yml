@@ -1,0 +1,19 @@
+# Theme facts
+meta:
+  name:         Alchemy
+  url:          https://github.com/tearfulDalvik/asmf-alchemy
+  author:       Gufeng Shen
+  author_url:   https://gufeng.sh/
+  github:       https://github.com/tearfulDalvik/asmf-alchemy
+
+# Hide footer from your homepage, example: sparanoid.com
+# Default:      true
+clean_homepage: true
+
+# Style post link color (if defined) for article list
+# Default:      true
+colorful_list:  true
+
+# Enable dark mode automatically via `prefers-color-scheme: dark`
+auto_dark_mode: true
+
